@@ -2,13 +2,15 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+namespace: "devops"
+
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: aiaguila1/nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "v0.0.1"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -37,8 +39,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  type: LoadBalancer
+  # port: 80
 
 ingress:
   enabled: false
